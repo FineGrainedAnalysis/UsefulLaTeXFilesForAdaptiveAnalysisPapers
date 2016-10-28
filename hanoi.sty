@@ -1,0 +1,114 @@
+%* Package Definition  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%** LaTeX version needed:
+\NeedsTeXFormat{LaTeX2e}
+%** Package provided:
+\ProvidesPackage{hanoi}
+\typeout{List of  macros that I use to draw hanoi towers.}
+
+
+
+\providecommand{\hanoi}{{Hano{\"\i}}}
+\providecommand{\Hanoi}{{Hano{\"\i}}}
+\providecommand\hanoit{{{\hanoi} Tower}}
+\providecommand\hanoitpb{{\tt {\hanoit} Problem}}
+
+\providecommand\diskPile{{\tt Disk Pile}}
+\providecommand\diskPilePb{{\tt Disk Pile} problem}
+
+
+% disque take 3 parameters: 
+% the name of the disk
+% its size
+% its half size, to align it with the others.
+\newcommand {\disque}[3]{ %
+\makebox{\hspace{11pt}\hspace{-#3pt}\framebox[#2pt]{$#1$}\hspace{11pt}\hspace{-#3pt}}}
+
+
+\def\diskDots{ %
+\makebox{\hspace{11pt}\hspace{-2pt}{$\vdots$}\hspace{11pt}\hspace{-2pt}}}
+
+\def\infini{\disque{\infty}{24}{12}}
+\def\n{\disque{n}{22}{11}}
+\def\nmun{\disque{n\hspace{-3pt}-\hspace{-3pt}1}{20}{10}}
+\def\nmdeux{\disque{n\hspace{-3pt}-\hspace{-3pt}2}{18}{9}}
+\def\unIced{\disque{{\bf 1}}{4}{2}}
+
+\def\onze{\disque{11}{19}{9}}
+\def\dix{\disque{10}{18}{9}}
+\def\neuf{\disque{9}{17}{8}}
+\def\huit{\disque{8}{16}{8}}
+\def\sept{\disque{7}{15}{7}}
+\def\six{\disque{6}{14}{7}}
+\def\cinq{\disque{5}{12}{6}}
+\def\quatre{\disque{4}{10}{5}}
+\def\trois{\disque{3}{8}{4}}
+\def\deux{\disque{2}{6}{3}}
+\def\un{\disque{1}{4}{2}}
+\def\z{ \phantom{\cinq} }
+
+\def\anonymea{\disque{\tt a}{16}{8}}
+\def\anonymeb{\disque{\tt b}{16}{8}}
+\def\anonymec{\disque{\tt c}{16}{8}}
+
+% Representation support Hanoi
+\newcommand {\peg}[4]{%
+\vbox{%
+\hbox{#4}%
+\hbox{#3} %
+\hbox{#2} %
+\hbox{#1} %
+}%
+}%
+% \renewcommand {\peg}[4]{%
+% #4 #3 #2 #1 
+% }
+
+\newcommand{\hanoiState}[3]{%
+  \framebox[66pt]{\vbox{%
+      \hbox{%
+        \makebox[22pt]{#1}%
+        \makebox[22pt]{#2}%
+        \makebox[22pt]{#3}%
+        }%
+      \hbox{%
+        \makebox[22pt]{$A$}%
+        \makebox[22pt]{$B$}%
+        \makebox[22pt]{$C$}%
+        }%
+      }  
+    }%
+  }%
+% \renewcommand{\hanoiState}[3]{%
+%   \framebox{
+%     \begin{minipage}[l]{22pt}
+%       \vfill
+%       \begin{minipage}[l]{22pt}
+%         #1
+%         \makebox[22pt]{$\cal A$}%
+%       \end{minipage}
+%     \end{minipage}
+%     \begin{minipage}[l]{22pt}
+%       \vfill
+%       \begin{minipage}[l]{22pt}
+%         #2
+%         \makebox[22pt]{$\cal B$}%
+%       \end{minipage}
+%     \end{minipage}
+%     \begin{minipage}[l]{22pt}
+%       \vfill
+%       \begin{minipage}[l]{22pt}
+%         #3
+%         \makebox[22pt]{$\cal C$}%
+%       \end{minipage}
+%     \end{minipage}
+% }}
+
+% U-shaped representation. 
+\newcommand{\ushape}[3]{
+\begin{minipage}[c]{1cm} #1\vfill \end{minipage}
+\begin{minipage}[c]{1cm} #2 \end{minipage}
+\begin{minipage}[c]{1cm} #3\vfill \end{minipage}
+}
+% U-shaped representation. 
+%\newcommand{\ushaped}[2]{\framebox[3cm]{$\begin{array}{#2}#1\end{array}$}}
+
