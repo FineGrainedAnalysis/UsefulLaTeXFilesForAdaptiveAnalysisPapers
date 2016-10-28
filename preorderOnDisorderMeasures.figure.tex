@@ -1,0 +1,79 @@
+\begin{figure}
+\centering
+\renewcommand{\partialOrderOnPreorderMeasures}{
+\begin{tikzpicture}[
+  addedToMoffat/.style={draw,very thick,rounded corners,shape=rectangle,inner sep=.1cm},
+  CompressedDS/.style={draw,rounded corners,shape=rectangle,inner sep=.1cm},
+  DirectCompressedDS/.style={draw,rounded corners,shape=rectangle,inner sep=.1cm,fill=green!20},
+  every matrix/.style={ampersand replacement=\&,column sep=.5cm,row sep=.2cm},
+  to/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize},
+  every node/.style={align=center}]
+  \matrix{
+    \&
+    \node (hist) {$\Hist$};
+    \& \& \& \& 
+    \node[DirectCompressedDS] (nblock) {$\nBlock=\nSRuns$}; 
+    \&
+    \node[DirectCompressedDS] (rem) {$\Rem$}; 
+    \&
+    \node[CompressedDS] (exc) {$\Exc=\Ham$}; 
+    \&
+    \\
+    \node (reg) {$\Reg$} ;
+    \& \node (loc) {$\Loc$} ;
+    \& \node (osc) {$\Osc$} ; 
+    \& \node[DirectCompressedDS] (inv) {$\Inv{=}\DS$};
+    \& \node[CompressedDS] (max) {$\Max{=}\Par$};
+    \\ \\ 
+    \& \node[DirectCompressedDS] (nsms){$\nSMS$} ;
+    \& \node[CompressedDS] (enc){$\Enc$};
+    \& \node[DirectCompressedDS] (nsus){$\nSUS$};
+    \& \node[DirectCompressedDS] (nruns){$\nRuns$};
+    % \& \node[DirectCompressedDS] (nsruns){$\nSRuns$};  % 2009-Barbay and Navarro
+    \\ \\ 
+    \& \node[addedToMoffat,DirectCompressedDS] (hsms){$\hSMS$};        % 2009-Barbay and Navarro
+    \& \node[addedToMoffat,DirectCompressedDS] (hsus){$\hSUS$};      % 2009-Barbay and Navarro
+    \& \node[addedToMoffat,DirectCompressedDS] (hlrm){$\hLRM$};      % 2011-Barbay, Fischer and Navarro
+    \& \node[addedToMoffat,DirectCompressedDS] (hruns){$\hRuns$};    % 2009-Barbay and Navarro
+    \& \node[addedToMoffat,DirectCompressedDS] (hsruns){$\hSRuns$};  % 2009-Barbay and Navarro
+    \\
+    };
+
+  \draw[to] (reg) -- (hist);       % copied from 1992-Moffat and Petersson
+  \draw[to] (hist) -- (nblock);    % copied from 1992-Moffat and Petersson
+  \draw[to] (nblock) -- (rem);     % copied from 1992-Moffat and Petersson
+  \draw[to] (rem) -- (exc);        % copied from 1992-Moffat and Petersson
+  \draw[to] (reg) -- (loc);        % copied from 1992-Moffat and Petersson
+  \draw[to] (loc) -- (osc);        % copied from 1992-Moffat and Petersson
+  \draw[to] (osc) -- (inv);        % copied from 1992-Moffat and Petersson
+  \draw[to] (inv) -- (max);        % copied from 1992-Moffat and Petersson
+  \draw[to] (reg) -- (nsms);      % copied from 1992-Moffat and Petersson
+  \draw[to] (nsms) -- (enc);       % copied from 1992-Moffat and Petersson
+  \draw[to] (enc) -- (nsus);       % copied from 1992-Moffat and Petersson
+  \draw[to] (nsus) -- (nruns);     % copied from 1992-Moffat and Petersson
+  \draw[to] (nruns) -- (nblock);   % proved in 2009-Barbay and Navarro
+  \draw[to] (hsms) -- (hsus);      % proved in 2009-Barbay and Navarro
+  \draw[to] (hsus) -- (hlrm);      % proved in 2011-Barbay, Fischer and Navarro
+  \draw[to] (hlrm) -- (hruns);     % proved in 2011-Barbay, Fischer and Navarro
+  \draw[to] (hruns) -- (hsruns);   % proved in 2009-Barbay and Navarro
+  \draw[to] (loc) -- (nblock);    % copied from 1992-Moffat and Petersson
+  \draw[to] (hist) -- (inv);      % copied from 1992-Moffat and Petersson
+  \draw[to] (osc) -- (nruns);     % copied from 1992-Moffat and Petersson
+  \draw[to] (nsus) -- (max);      % copied from 1992-Moffat and Petersson
+  \draw[to] (hsms) -- (nsms);     % proved in 2009-Barbay and Navarro
+  \draw[to] (hsus) -- (nsus);     % proved in 2009-Barbay and Navarro
+  \draw[to] (hruns) -- (nruns);   % proved in 2009-Barbay and Navarro
+  \draw[to] (hsruns) -- (nblock); % proved in 2009-Barbay and Navarro
+  \draw[to] (reg) -- (hsms);       % to be proved yet
+
+  \end{tikzpicture}
+}
+\partialOrderOnPreorderMeasures
+\caption{An extension of Moffat and Petersson's partial order \cite{1992-ACJ-AnOverviewOfAdaptiveSorting-MoffatPetersson} on measures of disorder on permutations. Measures of disorder added to their original graph are circled in bold, and measures for which a compressed data structure has been described  are marked by a round box, the original results \cite{2013-IanFest-FromTimeToSpace-Barbay,2013-TCS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro,2010-ISAAC-AlphabetPartitioningForCompressedRankSelectAndApplications-BarbayGagieNavarroNekrich,2014-Algorithmica-EfficientFullyCompressedSequenceRepresentations-BarbayClaudeGagieNavarroNekrich} being marked in green.}
+\label{fig:MeasuresOfDisorder}
+\end{figure}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
