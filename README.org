@@ -10,3 +10,14 @@
 #+EXCLUDE_TAGS: noexport
 #+CREATOR: Emacs 24.4.1 (Org mode 8.2.5h)
 
+
+* Sorting
+** Figure with definitions of  preorder measures 
+#+BEGIN_LaTeX
+\input{definitionsOfMeasuresOfDisorder.figure.tex}
+#+END_LaTeX
+** Figure with partial order on preorder measures
+#+BEGIN_LaTeX
+\input{partialOrderOnDisorderMeasures.figure.tex}
+#+END_LaTeX
+
