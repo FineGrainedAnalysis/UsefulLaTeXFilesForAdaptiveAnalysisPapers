@@ -1,0 +1,12 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t c:nil creator:comment d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t timestamp:t toc:t todo:t |:t
+#+TITLE: Useful LaTeX files shared between various scientific articles about the adapative analysis of algorithms and data structures.
+#+DATE: <2016-10-29 Sat>
+#+AUTHOR: Jérémy Barbay
+#+EMAIL: jeremy@barbay.cl
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.5h)
+
