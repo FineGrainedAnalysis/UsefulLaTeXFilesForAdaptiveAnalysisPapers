@@ -1,22 +1,36 @@
 \begin{figure}
+\begin{TODO}
+ADD the additional measures defined after 1995
+\end{TODO}
+\begin{TODO}
+Add the bibliographical references from Petersson and Moffat
+\end{TODO}
+\begin{TODO}
+Find the bibtex code for the following references
+\begin{itemize}
+\item 1989-IC-ANewMeasureOfPresortedness-EstivillCastroWood
+\end{itemize}
+\end{TODO}
 \centering
 \begin{tabular}{l|c|c|c}
-Measure  & Range &$C_M(n,k)$&Reference \\
+Measure $k$  & Range &$C_M(n,k)$&Reference \\
 \hline
-$\Max(X) = \max_{i\in[1..n]} |i-\pi(i)|$  & $[0..n-1]$ &$\Theta(n\lg k)$&\cite{} \\
-$\Par(X) = \max\{j-1 | 1\leq i \leq j \leq n \mbox{ and } x_i\geq x_i\}$ & $[0..n-1]$ &$\Theta(n\lg k)$&\cite{} \\
-$\Inv(X) = | (i,j) | 1\leq i<j\leq n \mbox{ and } x_i>x_j\}|$  & $[0..{n\choose2}]$ &$\Theta(n\lg(k/n))$&\cite{} \\
-$\DS(X)= \sum_{i\in[1..n]} |i-\pi(i)|$  & $[0..\frac{n^2}{2}]$ &$\Theta(n\lg(k/n))$&\cite{} \\
+$m_0(X)=0$  & $\{0\}$ &$\Theta(n\lg n)$& \cite{1985-TCom-MeasuresOfPresortednessAndOptimalSortingAlgorithms-Mannila} \\
+$m_{01}(X)=0\mbox{ if $X$ is sorted, and $1$ otherwise}$  & $\{0,1\}$ &$\Theta(n+kn\lg n)$& \cite{1985-TCom-MeasuresOfPresortednessAndOptimalSortingAlgorithms-Mannila} \\
+$\Max(X) = \max_{i\in[1..n]} |i-\pi(i)|$  & $[0..n-1]$ &$\Theta(n\lg k)$&\cite{1993-Algoritmica-SulinearMergingAndnaturalMergeSort-CarlssonLevcopoulosPetersson,1989-IC-ANewMeasureOfPresortedness-EstivillCastroWood} \\
+$\Par(X) = \max\{j-1 | 1\leq i \leq j \leq n \mbox{ and } x_i\geq x_i\}$ & $[0..n-1]$ &$\Theta(n\lg k)$&\cite{1989-IC-ANewMeasureOfPresortedness-EstivillCastroWood} \\
+$\Inv(X) = | (i,j) | 1\leq i<j\leq n \mbox{ and } x_i>x_j\}|$  & $[0..{n\choose2}]$ &$\Theta(n\lg(k/n))$&\cite{1977-STOC-aNewRepresentationForLinearLists-GuibasMcCreightPlassRoberts,1973-BOOK-TheArtOfComputerProgrammingVol3-Knuth,1985-TCom-MeasuresOfPresortednessAndOptimalSortingAlgorithms-Mannila,1979-CTCS-SortingPresortedFiles-Mehlhorn} \\
+$\DS(X)= \sum_{i\in[1..n]} |i-\pi(i)|$  & $[0..\frac{n^2}{2}]$ &$\Theta(n\lg(k/n))$&\cite{1980-CACM-BestSortingAlgorithmForNearlySortedLists-CookKim} \\
 $\Osc(X)=\sum_{i\in[2..n]} |\{j\in[1..n] | \min\{x_{i-1},x_i\}<x_j<\max\{x_{i-1},x_i\}\}|$
   & $[0..\lfloor \frac{n(n-1)}{2}\rfloor]$ &$\Theta(n\lg(k/n))$&\cite{} \\
 $\Runs(X) = 1+|\{i\in[1..n-1] | x_i>x_{i+1}\}|$  & $[1..n]$ &$\Theta(n\lg k)$&\cite{} \\
 $\SUS(X) = \min\{k|X \mbox{ is a shuffle of $k$ upsequences.}\}$  & $[1..n]$ &$\Theta(n\lg k)$&\cite{1994-IC-SortingShuffledMonotoneSequences-LevcopoulosPetersson} \\
 $\Enc(X)=$ the number of encroaching sequences  & $[1..\lceil\frac{n}{2}\rceil]$ &$\Theta(n\log k)$&\cite{} \\
-$\SMS(X)=\min\{k|X\mbox{ is a shuffle of $k$ monotone sequences}\}$  & $[1..\lfloor\sqrt{2n+\frac{1}{4}}-\frac{1}{2}\rfloor]$ &$\Theta(n\log k)$&\cite{} \\
-$\Exc(X)=$ the minimum number of pairwise exchanges required to sort $X$  & $[0..n-1]$ &$\Theta(n + k\log k)$&\cite{} \\
+$\SMS(X)=\min\{k|X\mbox{ is a shuffle of $k$ monotone sequences}\}$  & $[1..\lfloor\sqrt{2n+\frac{1}{4}}-\frac{1}{2}\rfloor]$ &$\Theta(n\log k)$&\cite{1994-IC-SortingShuffledMonotoneSequences-LevcopoulosPetersson} \\
+$\Exc(X)=$ the minimum number of pairwise exchanges required to sort $X$  & $[0..n-1]$ &$\Theta(n + k\log k)$&\cite{1993-Algoritmica-SulinearMergingAndnaturalMergeSort-CarlssonLevcopoulosPetersson} \\
 $\Ham(X)=|\{i\in[1..n] | i\neq\pi(i)\}|$  & $[0..n]$ &$\Theta(n + k\log k)$&\cite{} \\
 $\Rem(X)=n-\max\{k|X\mbox{ has an ascending subsequence of length $k$}\}$  & $[0..n-1]$ &$\Theta(n + k\log k)$&\cite{} \\
-$\Block(X)=|\{i\in[1..n-1] | \pi(i)+1 \neq \pi(i+1)\}|+1$  & $[1..n]$ &$\Theta(n + k\log k)$&\cite{} \\
+$\Block(X)=|\{i\in[1..n-1] | \pi(i)+1 \neq \pi(i+1)\}|+1$  & $[1..n]$ &$\Theta(n + k\log k)$&\cite{1993-Algoritmica-SulinearMergingAndnaturalMergeSort-CarlssonLevcopoulosPetersson} \\
   \end{tabular}
 \caption{All measures of presortedness that appear in the literature (adapted from the one from 1995 by \textcite{1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat}). Here, $\pi$ is the permutation of $[1..n]$ for which $\pi(i)=\rank(x_i,X)+1$, for $i\in[1..n]$, where $\rank(x_i,X)=|\{ x_j | j\in[1..n] \mbox{ and } x_i>x_j\}$. For each measure the first reference refers to the paper in which the measure is used, or suggested to be used, for quantifying presortedness.}
 \label{fig:DefinitionsOfMeasuresOfDisorder}
@@ -24,5 +38,5 @@ $\Block(X)=|\{i\in[1..n-1] | \pi(i)+1 \neq \pi(i+1)\}|+1$  & $[1..n]$ &$\Theta(n
 
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: t
+%%% TeX-master: "../2016-DRAFT-FromAdaptiveAlgorithmsToInstanceOptimality-Barbay"
 %%% End:
