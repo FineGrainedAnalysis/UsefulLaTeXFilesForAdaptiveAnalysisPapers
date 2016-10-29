@@ -1,19 +1,26 @@
 \begin{figure}
 \begin{TODO}
-ADD the additional measures defined after 1995
+ADD the additional measures defined after 1995 (e.g. Reg) from the overview.
 \end{TODO}
+
+\begin{TODO}
+ADD a definition for the number of pivots 
+\end{TODO}
+
 \begin{TODO}
 Add the bibliographical references from Petersson and Moffat
 \end{TODO}
+
 \begin{TODO}
 Find the bibtex code for the following references
 \begin{itemize}
 \item 1989-IC-ANewMeasureOfPresortedness-EstivillCastroWood
 \end{itemize}
 \end{TODO}
+
 \centering
 \begin{tabular}{l|c|c|c}
-Measure $k$  & Range &$C_M(n,k)$&Reference \\
+Measure $k$  & Range & $C_M(n,k)$ & Reference \\
 \hline
 $m_0(X)=0$  & $\{0\}$ &$\Theta(n\lg n)$& \cite{1985-TCom-MeasuresOfPresortednessAndOptimalSortingAlgorithms-Mannila} \\
 $m_{01}(X)=0\mbox{ if $X$ is sorted, and $1$ otherwise}$  & $\{0,1\}$ &$\Theta(n+kn\lg n)$& \cite{1985-TCom-MeasuresOfPresortednessAndOptimalSortingAlgorithms-Mannila} \\
@@ -31,7 +38,13 @@ $\Exc(X)=$ the minimum number of pairwise exchanges required to sort $X$  & $[0.
 $\Ham(X)=|\{i\in[1..n] | i\neq\pi(i)\}|$  & $[0..n]$ &$\Theta(n + k\log k)$&\cite{} \\
 $\Rem(X)=n-\max\{k|X\mbox{ has an ascending subsequence of length $k$}\}$  & $[0..n-1]$ &$\Theta(n + k\log k)$&\cite{} \\
 $\Block(X)=|\{i\in[1..n-1] | \pi(i)+1 \neq \pi(i+1)\}|+1$  & $[1..n]$ &$\Theta(n + k\log k)$&\cite{1993-Algoritmica-SulinearMergingAndnaturalMergeSort-CarlssonLevcopoulosPetersson} \\
-  \end{tabular}
+% Measure $k$  & Range & $C_M(n,k)$ & Reference \\
+$\entropy(\vSRuns)$  & $[0,\lg(\Block(X))]$ & $\Theta(n(1+\entropy(\vSRuns)))$ & \cite{2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro,2013-TCS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro} \\
+$\entropy(\vRuns)$  & $[0,\lg(\Runs(X))]$ & $\Theta(n(1+\entropy(\vRuns)))$ & \cite{2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro,2013-TCS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro} \\
+$\entropy(\vSUS)$  & $[0,\lg(\SUS(X))]$ & $\Theta(n(1+\entropy(\vSUS)))$ & \cite{2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro,2013-TCS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro} \\
+$\entropy(\vSMS)$  & $[0,\lg(\SMS(X))]$ & $\Theta(n(1+\entropy(\vSMS)))$ &   
+\cite{2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro,2013-TCS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro} \\
+\end{tabular}
 \caption{All measures of presortedness that appear in the literature (adapted from the one from 1995 by \textcite{1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat}). Here, $\pi$ is the permutation of $[1..n]$ for which $\pi(i)=\rank(x_i,X)+1$, for $i\in[1..n]$, where $\rank(x_i,X)=|\{ x_j | j\in[1..n] \mbox{ and } x_i>x_j\}$. For each measure the first reference refers to the paper in which the measure is used, or suggested to be used, for quantifying presortedness.}
 \label{fig:DefinitionsOfMeasuresOfDisorder}
 \end{figure}
