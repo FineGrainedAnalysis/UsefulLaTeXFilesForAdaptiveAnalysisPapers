@@ -1,0 +1,129 @@
+\documentclass{llncs}
+\usepackage{makeidx}  % allows for indexgeneration
+
+\usepackage[T1]{fontenc}
+\usepackage{times} % Specify font, especially when using ps2pdf after.
+\usepackage{pifont}
+\usepackage{epsfig}
+\usepackage{algorithmic}%% For the Algorithms.
+\usepackage{algorithm} %% For the floating Algorithm environment.
+\usepackage{graphicx}
+\usepackage{hanoi}
+\renewcommand\hanoit{\textsc{{\hanoi} Tower}}
+\renewcommand\hanoitpb{{{\hanoit} problem}}
+\renewcommand{\diskPile}{\textsc{Disk Pile}}
+\renewcommand{\diskPilePb}{{\diskPile\ problem}}
+\newcommand{\pegA}{\ensuremath A}
+\newcommand{\pegB}{\ensuremath B}
+\newcommand{\pegC}{\ensuremath C}
+\newcommand{\pegX}{\ensuremath X}
+
+
+\usepackage{amssymb}
+% \usepackage[sort]{natbib} % To have the references sorted in good order.
+\usepackage[nottoc]{tocbibind}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\newcommand{\citeN}{\textcite}
+\bibliography{/home/jbarbay/EverGoing/Bibliography/bibliographyDatabaseJeremyBarbay,/home/jbarbay/EverGoing/Publications/publications-ExportedFromOrgmode-Barbay}
+\usepackage{url}
+\usepackage[bookmarks,colorlinks=true,bookmarksopen,bookmarksdepth=2,linktocpage=true]{hyperref} 
+
+\usepackage{fullpage}
+\usepackage{jeremy}
+\usepackage{preorderMeasureNotations}
+\usepackage{prefixFreeCodeNotations}
+\usepackage{succinctEncodingsNotations}
+\usepackage{versions}
+\excludeversion{INUTILE}
+\includeversion{LONG}
+\excludeversion{TODO}
+
+
+\providecommand{\pb}[1]{{\textsc{#1}}}
+
+% Do away with "club lines" (the first line of a paragraph on the last line of a page; also called "orphan lines") 
+% and "widow lines" (the last line of the paragraph on a new page): 
+\widowpenalty=10000   
+\clubpenalty=10000
+\flushbottom
+
+% Always aknowledge sources and pointers and proof readers
+\newenvironment{acknowledgments}{\vspace{.4cm}{\noindent \em Acknowledgements:}}{}%
+
+% Add a counted environment for open problems
+\newtheorem{openProblem}{Open Problem}
+ 
+\begin{document}
+
+\pagestyle{headings}  % switches on printing of running heads
+
+\mainmatter % start of the contributions
+\title{Examples of usage of tidbits about the Adaptive Analysis of Algorithms and Data-Structures} 
+\titlerunning{Examples of usage of tidbits}
+
+\author{J\'er\'emy Barbay}
+\authorrunning{J\'er\'emy Barbay}   % abbreviated author list (for running head)
+%
+%%%% modified list of authors for the TOC (add the affiliations)
+\tocauthor{J\'er\'emy Barbay (Universdad de Chile)}
+%
+\institute{
+\email{jeremy@barbay.cl}
+}
+
+\maketitle              % typeset the title of the contribution
+
+\begin{abstract}
+Here I give an example of \LaTeX\ article using the tidbits in this repository.
+\end{abstract}
+
+\begin{center}
+  \begin{minipage}{.9\textwidth}
+    \noindent{\bf Keywords:} 
+Adaptive Algorithms, 
+Compressed Data Structures,
+Difficulty Measure,
+Distribution Sensitive,
+Fine Analysis,
+Fine Grained Analysis,
+Instance Optimality,
+Multivariate Analysis,
+Output Sensitive Analysis,
+Parameterized Complexity.
+  \end{minipage}
+\end{center}
+
+\input{definitionsOfMeasuresOfDisorder.figure.tex}
+\input{partialOrderOnDisorderMeasures.figure.tex}
+
+
+%%%%%%%%  BIBLIO  %%%%%%%%%%%%
+%\newpage
+\printbibliography
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
