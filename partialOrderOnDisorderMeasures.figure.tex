@@ -13,7 +13,7 @@
     \&
     \node (hist) {$\Hist$};
     \& \& \& \& 
-    \node[DirectCompressedDS] (nblock) {$\nBlock=\nSRuns$}; 
+    \node[DirectCompressedDS] (nblock) {$\begin{array}{c}\nBlock\\ \nSRuns\end{array}$}; 
     \&
     \node[DirectCompressedDS] (rem) {$\Rem$}; 
     \&
@@ -70,11 +70,10 @@
   \draw[to] (hsruns) -- (nblock); % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
   \draw[to] (reg) -- (hsms);       % to be proved yet
   \draw[to] (rem) -- (np);         %  Survey 2017
-  \draw[to] (inv) -- (np);         % Survey 2017
-  \draw[to] (nruns) -- (np);       % Survey 2017
-  \draw[to] (m01) -- (m0);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+  \draw[to] (max) -- (np);         % Survey 2017
+%  \draw[to] (nruns) -- (np);       % Survey 2017 % Redundant with   \draw[to] (rem) -- (np);
+   \draw[to] (m01) -- (m0);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
   \draw[to] (exc) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-  \draw[to] (max) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
   \draw[to] (np) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
   \draw[to] (hsruns) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
   \end{tikzpicture}
