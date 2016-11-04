@@ -3,6 +3,7 @@
 \renewcommand{\partialOrderOnPreorderMeasures}{
 \begin{tikzpicture}[
   addedToMoffat/.style={draw,very thick,rounded corners,shape=rectangle,inner sep=.1cm},
+  1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat/.style={draw,rounded corners,shape=rectangle},
   CompressedDS/.style={draw,rounded corners,shape=rectangle,inner sep=.1cm},
   DirectCompressedDS/.style={draw,rounded corners,shape=rectangle,inner sep=.1cm,fill=green!20},
   every matrix/.style={ampersand replacement=\&,column sep=.5cm,row sep=.2cm},
@@ -29,16 +30,16 @@
     \& \node[CompressedDS] (enc){$\Enc$};
     \& \node[DirectCompressedDS] (nsus){$\nSUS$};
     \& \node[DirectCompressedDS] (nruns){$\nRuns$};
-    % \& \node[DirectCompressedDS] (nsruns){$\nSRuns$};  % 2009-Barbay and Navarro
+    % \& \node[DirectCompressedDS] (nsruns){$\nSRuns$};  % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
     \& \& \node[addedToMoffat] (np) {$\NonPivot$}; % 2017 Survey
-    \& \node (m01) {$m_{01}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-    \& \node (m0) {$m_{0}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+    \& \node[1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (m01) {$m_{01}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+    \& \node[1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (m0) {$m_{0}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
     \\ 
-    \& \node[addedToMoffat,DirectCompressedDS] (hsms){$\hSMS$};        % 2009-Barbay and Navarro
-    \& \node[addedToMoffat,DirectCompressedDS] (hsus){$\hSUS$};      % 2009-Barbay and Navarro
+    \& \node[addedToMoffat,DirectCompressedDS] (hsms){$\hSMS$};        % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+    \& \node[addedToMoffat,DirectCompressedDS] (hsus){$\hSUS$};      % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
     \& \node[addedToMoffat,DirectCompressedDS] (hlrm){$\hLRM$};      % 2011-Barbay, Fischer and Navarro
-    \& \node[addedToMoffat,DirectCompressedDS] (hruns){$\hRuns$};    % 2009-Barbay and Navarro
-    \& \node[addedToMoffat,DirectCompressedDS] (hsruns){$\hSRuns$};  % 2009-Barbay and Navarro
+    \& \node[addedToMoffat,DirectCompressedDS] (hruns){$\hRuns$};    % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+    \& \node[addedToMoffat,DirectCompressedDS] (hsruns){$\hSRuns$};  % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
     \\
     };
 
@@ -54,19 +55,19 @@
   \draw[to] (nsms) -- (enc);       % copied from 1992-Moffat and Petersson
   \draw[to] (enc) -- (nsus);       % copied from 1992-Moffat and Petersson
   \draw[to] (nsus) -- (nruns);     % copied from 1992-Moffat and Petersson
-  \draw[to] (nruns) -- (nblock);   % proved in 2009-Barbay and Navarro
-  \draw[to] (hsms) -- (hsus);      % proved in 2009-Barbay and Navarro
+  \draw[to] (nruns) -- (nblock);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[to] (hsms) -- (hsus);      % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
   \draw[to] (hsus) -- (hlrm);      % proved in 2011-Barbay, Fischer and Navarro
   \draw[to] (hlrm) -- (hruns);     % proved in 2011-Barbay, Fischer and Navarro
-  \draw[to] (hruns) -- (hsruns);   % proved in 2009-Barbay and Navarro
+  \draw[to] (hruns) -- (hsruns);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
   \draw[to] (loc) -- (nblock);    % copied from 1992-Moffat and Petersson
   \draw[to] (hist) -- (inv);      % copied from 1992-Moffat and Petersson
   \draw[to] (osc) -- (nruns);     % copied from 1992-Moffat and Petersson
   \draw[to] (nsus) -- (max);      % copied from 1992-Moffat and Petersson
-  \draw[to] (hsms) -- (nsms);     % proved in 2009-Barbay and Navarro
-  \draw[to] (hsus) -- (nsus);     % proved in 2009-Barbay and Navarro
-  \draw[to] (hruns) -- (nruns);   % proved in 2009-Barbay and Navarro
-  \draw[to] (hsruns) -- (nblock); % proved in 2009-Barbay and Navarro
+  \draw[to] (hsms) -- (nsms);     % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[to] (hsus) -- (nsus);     % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[to] (hruns) -- (nruns);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[to] (hsruns) -- (nblock); % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
   \draw[to] (reg) -- (hsms);       % to be proved yet
   \draw[to] (rem) -- (np);         %  Survey 2017
   \draw[to] (inv) -- (np);         % Survey 2017
