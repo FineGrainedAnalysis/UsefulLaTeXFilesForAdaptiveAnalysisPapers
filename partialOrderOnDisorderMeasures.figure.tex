@@ -30,6 +30,7 @@
     \& \node[DirectCompressedDS] (nsus){$\nSUS$};
     \& \node[DirectCompressedDS] (nruns){$\nRuns$};
     % \& \node[DirectCompressedDS] (nsruns){$\nSRuns$};  % 2009-Barbay and Navarro
+    \& \& \node[addedToMoffat] (np) {$\NonPivot$}; % 2017 Survey
     \\ \\ 
     \& \node[addedToMoffat,DirectCompressedDS] (hsms){$\hSMS$};        % 2009-Barbay and Navarro
     \& \node[addedToMoffat,DirectCompressedDS] (hsus){$\hSUS$};      % 2009-Barbay and Navarro
@@ -65,6 +66,9 @@
   \draw[to] (hruns) -- (nruns);   % proved in 2009-Barbay and Navarro
   \draw[to] (hsruns) -- (nblock); % proved in 2009-Barbay and Navarro
   \draw[to] (reg) -- (hsms);       % to be proved yet
+  \draw[to] (rem) -- (np);         % 
+  \draw[to] (inv) -- (np);         % 
+  \draw[to] (nruns) -- (np);       % 
 
   \end{tikzpicture}
 }
