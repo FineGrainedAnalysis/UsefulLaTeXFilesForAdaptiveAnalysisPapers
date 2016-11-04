@@ -25,16 +25,16 @@
     \& \node (osc) {$\Osc$} ; 
     \& \node[DirectCompressedDS] (inv) {$\begin{array}{c}\Inv\\\DS\end{array}$};
     \& \node[CompressedDS] (max) {$\begin{array}{c}\Max\\\Par\end{array}$};
-    \& \& \node[addedToMoffat] (np) {$\NonPivot$}; % 2017 Survey
-    \& \node[1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (m01) {$m_{01}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-    \& \node[1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (m0) {$m_{0}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+    \& \& \node[addedToMoffat,CompressedDS] (np) {$\NonPivot$}; % 2017 Survey
+    \& \& \node[1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat,CompressedDS] (m01) {$m_{01}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+    \& \node[1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat,CompressedDS] (m0) {$m_{0}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
     \\ 
     \& \node[DirectCompressedDS] (nsms){$\nSMS$} ;
     \& \node[CompressedDS] (enc){$\Enc$};
     \& \node[DirectCompressedDS] (nsus){$\nSUS$};
     \& \node[DirectCompressedDS] (nruns){$\nRuns$};
     % \& \node[DirectCompressedDS] (nsruns){$\nSRuns$};  % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-    \\ 
+    \\[3pt] 
     \& \node[addedToMoffat,DirectCompressedDS] (hsms){$\hSMS$};        % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
     \& \node[addedToMoffat,DirectCompressedDS] (hsus){$\hSUS$};      % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
     \& \node[addedToMoffat,DirectCompressedDS] (hlrm){$\hLRM$};      % 2011-Barbay, Fischer and Navarro
@@ -79,7 +79,7 @@
   \end{tikzpicture}
 }
 \partialOrderOnPreorderMeasures
-\caption{An extension of Moffat and Petersson's partial order \cite{1992-ACJ-AnOverviewOfAdaptiveSorting-MoffatPetersson} on measures of disorder on permutations. Measures of disorder added to their original graph are circled in bold, and measures for which a compressed data structure has been described  are marked by a round box, the original results \cite{2013-IanFest-FromTimeToSpace-Barbay,2013-TCS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro,2010-ISAAC-AlphabetPartitioningForCompressedRankSelectAndApplications-BarbayGagieNavarroNekrich,2014-Algorithmica-EfficientFullyCompressedSequenceRepresentations-BarbayClaudeGagieNavarroNekrich} being marked in green.}
+\caption{An extension of Moffat and Petersson's partial order \cite{1992-ACJ-AnOverviewOfAdaptiveSorting-MoffatPetersson} on measures of disorder on permutations, putting back the $m_0$ and $m_{01}$ measures from their previous graph~\cite{1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat}, and measures studied after their overview (circled in bold). Measures for which a compressed data structure has been directly described are \cite{2013-IanFest-FromTimeToSpace-Barbay,2013-TCS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro,2010-ISAAC-AlphabetPartitioningForCompressedRankSelectAndApplications-BarbayGagieNavarroNekrich,2014-Algorithmica-EfficientFullyCompressedSequenceRepresentations-BarbayClaudeGagieNavarroNekrich} marked in green, those for which such a data structure is implied by the partial order are simply marked by a round box.}
 \label{fig:MeasuresOfDisorder}
 \end{figure}
 
