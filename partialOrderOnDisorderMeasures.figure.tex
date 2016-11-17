@@ -42,40 +42,43 @@
     \& \node[addedToMoffat,DirectCompressedDS] (hsruns){$\hSRuns$};  % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
     \\
     };
+    % Domination results:
+  \draw[dominates] (reg) -- (hist);       % copied from 1992-Moffat and Petersson
+  \draw[dominates] (hist) -- (nblock);    % copied from 1992-Moffat and Petersson
+  \draw[dominates] (nblock) -- (rem);     % copied from 1992-Moffat and Petersson
+  \draw[dominates] (rem) -- (exc);        % copied from 1992-Moffat and Petersson
+  \draw[dominates] (reg) -- (loc);        % copied from 1992-Moffat and Petersson
+  \draw[dominates] (loc) -- (osc);        % copied from 1992-Moffat and Petersson
+  \draw[dominates] (osc) -- (inv);        % copied from 1992-Moffat and Petersson
+  \draw[dominates] (inv) -- (max);        % copied from 1992-Moffat and Petersson
+  \draw[dominates] (reg) -- (nsms);      % copied from 1992-Moffat and Petersson
+  \draw[dominates] (nsms) -- (enc);       % copied from 1992-Moffat and Petersson
+  \draw[dominates] (enc) -- (nsus);       % copied from 1992-Moffat and Petersson
+  \draw[dominates] (nsus) -- (nruns);     % copied from 1992-Moffat and Petersson
+  \draw[dominates] (hsms) -- (hsus);      % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[dominates] (hsus) -- (hlrm);      % proved in 2011-Barbay, Fischer and Navarro
+  \draw[dominates] (hlrm) -- (hruns);     % proved in 2011-Barbay, Fischer and Navarro
+  \draw[dominates] (hruns) -- (hsruns);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[dominates] (loc) -- (nblock);    % copied from 1992-Moffat and Petersson
+  \draw[dominates] (hist) -- (inv);      % copied from 1992-Moffat and Petersson
+  \draw[dominates] (osc) -- (nruns);     % copied from 1992-Moffat and Petersson
+  \draw[dominates] (nsus) -- (max);      % copied from 1992-Moffat and Petersson
+  \draw[dominates] (hsms) -- (nsms);     % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[dominates] (hsus) -- (nsus);     % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[dominates] (hruns) -- (nruns);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[dominates] (hsruns) -- (nblock); % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[dominates] (reg) -- (hsms);       % to be proved yet
+  \draw[dominates] (rem) -- (np);         %  Survey 2017
+  \draw[dominates] (max) -- (np);         % Survey 2017
+  \draw[dominates] (nruns) -- (np);       % Survey 2017 % Redundant with   \draw[dominates] (rem) -- (np);
+  \draw[dominates] (m01) -- (m0);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+  \draw[dominates] (exc) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+  \draw[dominates] (np) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+  \draw[dominates] (hsruns) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+% Independance results
+  \draw[independant] (nruns) -- (nblock);   % Independance proved in past paper
 
-  \draw[to] (reg) -- (hist);       % copied from 1992-Moffat and Petersson
-  \draw[to] (hist) -- (nblock);    % copied from 1992-Moffat and Petersson
-  \draw[to] (nblock) -- (rem);     % copied from 1992-Moffat and Petersson
-  \draw[to] (rem) -- (exc);        % copied from 1992-Moffat and Petersson
-  \draw[to] (reg) -- (loc);        % copied from 1992-Moffat and Petersson
-  \draw[to] (loc) -- (osc);        % copied from 1992-Moffat and Petersson
-  \draw[to] (osc) -- (inv);        % copied from 1992-Moffat and Petersson
-  \draw[to] (inv) -- (max);        % copied from 1992-Moffat and Petersson
-  \draw[to] (reg) -- (nsms);      % copied from 1992-Moffat and Petersson
-  \draw[to] (nsms) -- (enc);       % copied from 1992-Moffat and Petersson
-  \draw[to] (enc) -- (nsus);       % copied from 1992-Moffat and Petersson
-  \draw[to] (nsus) -- (nruns);     % copied from 1992-Moffat and Petersson
-  \draw[to] (nruns) -- (nblock);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[to] (hsms) -- (hsus);      % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[to] (hsus) -- (hlrm);      % proved in 2011-Barbay, Fischer and Navarro
-  \draw[to] (hlrm) -- (hruns);     % proved in 2011-Barbay, Fischer and Navarro
-  \draw[to] (hruns) -- (hsruns);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[to] (loc) -- (nblock);    % copied from 1992-Moffat and Petersson
-  \draw[to] (hist) -- (inv);      % copied from 1992-Moffat and Petersson
-  \draw[to] (osc) -- (nruns);     % copied from 1992-Moffat and Petersson
-  \draw[to] (nsus) -- (max);      % copied from 1992-Moffat and Petersson
-  \draw[to] (hsms) -- (nsms);     % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[to] (hsus) -- (nsus);     % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[to] (hruns) -- (nruns);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[to] (hsruns) -- (nblock); % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[to] (reg) -- (hsms);       % to be proved yet
-  \draw[to] (rem) -- (np);         %  Survey 2017
-  \draw[to] (max) -- (np);         % Survey 2017
-%  \draw[to] (nruns) -- (np);       % Survey 2017 % Redundant with   \draw[to] (rem) -- (np);
-   \draw[to] (m01) -- (m0);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-  \draw[to] (exc) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-  \draw[to] (np) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-  \draw[to] (hsruns) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+
   \end{tikzpicture}
 }
 \partialOrderOnPreorderMeasures
