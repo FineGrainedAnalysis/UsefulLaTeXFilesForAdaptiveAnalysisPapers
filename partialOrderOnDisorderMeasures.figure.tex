@@ -2,45 +2,51 @@
 \centering
 \renewcommand{\partialOrderOnPreorderMeasures}{
 \begin{tikzpicture}[
-  addedToMoffat/.style={draw,very thick,rounded corners,shape=rectangle,inner sep=.1cm},
-  1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat/.style={draw,rounded corners,shape=rectangle},
-  CompressedDS/.style={draw,rounded corners,shape=rectangle,inner sep=.1cm},
-  DirectCompressedDS/.style={draw,rounded corners,shape=rectangle,inner sep=.1cm,fill=green!20},
   every matrix/.style={ampersand replacement=\&,column sep=.5cm,row sep=.2cm},
-  dominates/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize},
-  independant/.style={>-<,>=stealth',shorten >=1pt,thick,font=\sffamily\footnotesize},
+  measure/.style={draw,rounded corners,shape=rectangle,inner sep=.1cm},
+  CompressedDS/.style={measure},
+  DirectCompressedDS/.style={measure,fill=green!20},
+  relation/.style={->,>=stealth',shorten >=1pt,semithick,font=\sffamily\footnotesize},
+  dominates/.style={relation,->},
+  independant/.style={relation,>-<,ultra thick},
+  result/.style={},
+  survey2017/.style={result,color=green!60},
+  1992-ACJ-AnOverviewOfAdaptiveSorting-MoffatPetersson/.style={result,color=black!50},
+  1994-IC-SortingShuffledMonotoneSequences-LevcopoulosPetersson/.style={result},
+  1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat/.style={result,color=black!30},
+  2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro/.style={result},
+  2011-CPM-LRMTrees-BarbayFischerNavarro/.style={result},
   every node/.style={align=center}]
   \matrix{
     \&
-    \node (hist) {$\Hist$};
+    \node[measure,1992-ACJ-AnOverviewOfAdaptiveSorting-MoffatPetersson] (hist) {$\Hist$};
     \& \& \& \& 
-    \node[DirectCompressedDS] (nblock) {$\begin{array}{c}\nBlock\\ \nSRuns\end{array}$}; 
+    \node[measure,DirectCompressedDS,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (nblock) {$\begin{array}{c}\nBlock\\ \nSRuns\end{array}$}; 
     \&
-    \node[DirectCompressedDS] (rem) {$\Rem$}; 
+    \node[measure,DirectCompressedDS] (rem) {$\Rem$}; 
     \&
-    \node[CompressedDS] (exc) {$\begin{array}{c}\Exc\\\Ham\end{array}$}; 
+    \node[measure,CompressedDS] (exc) {$\begin{array}{c}\Exc\\\Ham\end{array}$}; 
     \&
     \\
-    \node (reg) {$\Reg$} ;
-    \& \node (loc) {$\Loc$} ;
-    \& \node (osc) {$\Osc$} ; 
-    \& \node[DirectCompressedDS] (inv) {$\begin{array}{c}\Inv\\\DS\end{array}$};
-    \& \node[CompressedDS] (max) {$\begin{array}{c}\Max\\\Par\end{array}$};
-    \& \& \node[addedToMoffat,CompressedDS] (np) {$\NonPivot$}; % 2017 Survey
-    \& \& \node[1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat,CompressedDS] (m01) {$m_{01}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-    \& \node[1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat,CompressedDS] (m0) {$m_{0}$}; % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+    \node[measure,1992-ACJ-AnOverviewOfAdaptiveSorting-MoffatPetersson] (reg) {$\Reg$} ;
+    \& \node[measure] (loc) {$\Loc$} ;
+    \& \node[measure] (osc) {$\Osc$} ; 
+    \& \node[measure,DirectCompressedDS] (inv) {$\begin{array}{c}\Inv\\\DS\end{array}$};
+    \& \node[measure,CompressedDS] (max) {$\begin{array}{c}\Max\\\Par\end{array}$};
+    \& \& \node[measure,CompressedDS,survey2017] (np) {$\NonPivot$}; 
+    \& \& \node[measure,1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat,CompressedDS] (m01) {$m_{01}$};
+    \& \node[measure,1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat,CompressedDS] (m0) {$m_{0}$}; 
     \\ 
-    \& \node[DirectCompressedDS] (nsms){$\nSMS$} ;
-    \& \node[CompressedDS] (enc){$\Enc$};
-    \& \node[DirectCompressedDS] (nsus){$\nSUS$};
-    \& \node[DirectCompressedDS] (nruns){$\nRuns$};
-    % \& \node[DirectCompressedDS] (nsruns){$\nSRuns$};  % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+    \& \node[measure,DirectCompressedDS,1994-IC-SortingShuffledMonotoneSequences-LevcopoulosPetersson] (nsms){$\nSMS$} ;
+    \& \node[measure,CompressedDS] (enc){$\Enc$};
+    \& \node[measure,DirectCompressedDS,1994-IC-SortingShuffledMonotoneSequences-LevcopoulosPetersson] (nsus){$\nSUS$};
+    \& \node[measure,DirectCompressedDS] (nruns){$\nRuns$};
     \\[3pt] 
-    \& \node[addedToMoffat,DirectCompressedDS] (hsms){$\hSMS$};        % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-    \& \node[addedToMoffat,DirectCompressedDS] (hsus){$\hSUS$};      % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-    \& \node[addedToMoffat,DirectCompressedDS] (hlrm){$\hLRM$};      % 2011-Barbay, Fischer and Navarro
-    \& \node[addedToMoffat,DirectCompressedDS] (hruns){$\hRuns$};    % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-    \& \node[addedToMoffat,DirectCompressedDS] (hsruns){$\hSRuns$};  % 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+    \& \node[measure,DirectCompressedDS,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hsms){$\hSMS$};        
+    \& \node[measure,DirectCompressedDS,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hsus){$\hSUS$};      
+    \& \node[measure,DirectCompressedDS,2011-CPM-LRMTrees-BarbayFischerNavarro] (hlrm){$\hLRM$};      
+    \& \node[measure,DirectCompressedDS,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hruns){$\hRuns$};   
+    \& \node[measure,DirectCompressedDS,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hsruns){$\hSRuns$}; 
     \\
     };
     % Domination results:
@@ -56,30 +62,28 @@
   \draw[dominates] (nsms) -- (enc);       % copied from 1992-Moffat and Petersson
   \draw[dominates] (enc) -- (nsus);       % copied from 1992-Moffat and Petersson
   \draw[dominates] (nsus) -- (nruns);     % copied from 1992-Moffat and Petersson
-  \draw[dominates] (hsms) -- (hsus);      % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[dominates] (hsus) -- (hlrm);      % proved in 2011-Barbay, Fischer and Navarro
-  \draw[dominates] (hlrm) -- (hruns);     % proved in 2011-Barbay, Fischer and Navarro
-  \draw[dominates] (hruns) -- (hsruns);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[dominates,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hsms) -- (hsus);
+  \draw[dominates,2011-CPM-LRMTrees-BarbayFischerNavarro] (hsus) -- (hlrm);  
+  \draw[dominates,2011-CPM-LRMTrees-BarbayFischerNavarro] (hlrm) -- (hruns); 
+  \draw[dominates,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hruns) -- (hsruns);
   \draw[dominates] (loc) -- (nblock);    % copied from 1992-Moffat and Petersson
   \draw[dominates] (hist) -- (inv);      % copied from 1992-Moffat and Petersson
   \draw[dominates] (osc) -- (nruns);     % copied from 1992-Moffat and Petersson
   \draw[dominates] (nsus) -- (max);      % copied from 1992-Moffat and Petersson
-  \draw[dominates] (hsms) -- (nsms);     % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[dominates] (hsus) -- (nsus);     % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[dominates] (hruns) -- (nruns);   % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
-  \draw[dominates] (hsruns) -- (nblock); % proved in 2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro
+  \draw[dominates,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hsms) -- (nsms);     
+  \draw[dominates,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hsus) -- (nsus);     
+  \draw[dominates,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hruns) -- (nruns);   
+  \draw[dominates,2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro] (hsruns) -- (nblock); 
   \draw[dominates] (reg) -- (hsms);       % to be proved yet
-  \draw[dominates] (rem) -- (np);         %  Survey 2017
-  \draw[dominates] (max) -- (np);         % Survey 2017
-  \draw[dominates] (nruns) -- (np);       % Survey 2017 % Redundant with   \draw[dominates] (rem) -- (np);
-  \draw[dominates] (m01) -- (m0);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-  \draw[dominates] (exc) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-  \draw[dominates] (np) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
-  \draw[dominates] (hsruns) -- (m01);       % 1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat
+  \draw[dominates,survey2017] (rem) -- (np); 
+  \draw[dominates,survey2017] (max) -- (np);   
+  \draw[dominates,survey2017] (nruns) -- (np); 
+  \draw[dominates,1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (m01) -- (m0);    
+  \draw[dominates,1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (exc) -- (m01);   
+  \draw[dominates,1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (np) -- (m01);    
+  \draw[dominates,1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (hsruns) -- (m01);
 % Independance results
-  \draw[independant] (nruns) -- (nblock);   % Independance proved in past paper
-
-
+  \draw[independant,survey2017] (nruns) -- (nblock);   % Independance proved in past paper
   \end{tikzpicture}
 }
 \partialOrderOnPreorderMeasures
