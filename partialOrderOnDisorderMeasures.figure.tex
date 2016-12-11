@@ -12,7 +12,8 @@
   independant/.style={relation,>-<,ultra thick},
   % 
   result/.style={},
-  1992-ACJ-AnOverviewOfAdaptiveSorting-MoffatPetersson/.style={result,color=black!30},
+  1992-ACJ-AnOverviewOfAdaptiveSorting-MoffatPetersson/.style={result,color=black!20},
+  1993-Algoritmica-SulinearMergingAndnaturalMergeSort-CarlssonLevcopoulosPetersson/.style={result,color=black!30},
   1994-IC-SortingShuffledMonotoneSequences-LevcopoulosPetersson/.style={result,color=black!40},
   1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat/.style={result,color=black!50},
   2009-STACS-CompressedRepresentationsOfPermutationsAndApplications-BarbayNavarro/.style={result,color=green!60},
@@ -91,8 +92,9 @@
   \draw[dominates,1995-DAM-AFrameworkForAdaptiveSorting-PeterssonMoffat] (hsruns) -- (m01);
   \draw[dominates,TODO] (reg) -- (hsms);       % to be proved yet
 % Independance results
-  \draw[independant,survey2017] (nruns) -- (nblock);
-  \draw[independant,TODO] (np) -- (exc);       % to be proved yet
+  \draw[independant,1993-Algoritmica-SulinearMergingAndnaturalMergeSort-CarlssonLevcopoulosPetersson] (nruns) -- (rem);
+  \draw[independant,survey2017,TODO] (nruns) -- (nblock);
+  \draw[independant,TODO] (np) -- (exc);       
   \end{tikzpicture}
 }
 \partialOrderOnPreorderMeasures
